@@ -7,16 +7,13 @@
         <h1><a href="/">Django Girls Blog</a></h1>
     </div>
 
-    <div>
-        <p>published: 25.05.2019, 14:19</p>
-        <h2><a href="">Success doesn’t just find you. You have to go out and get it</a></h2>
-        <p>The harder you work for something, the greater you'll feal when you achieve it</p>
-    </div>
+	{% for post in posts %}
+	 	<div>
+	        <p>published: {{ post.published_date }}</p>
+	        <h2><a href="">{{ post.title }}</a></h2>
+	        <p>{{ post.text|linebreaksbr }}</p>
+	    </div>
+	{% endfor %}
 
-    <div>
-        <p>published: 25.05.2019, 14:30</p>
-        <h2><a href="">Failure is good</a></h2>
-        <p>You Learn More From Failure Than From Success. Don’t Let It Stop You. Failure Builds Character.</p>
-    </div>
 </body>
 </html>
